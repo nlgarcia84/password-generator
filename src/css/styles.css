@@ -1,8 +1,53 @@
 :root {
   --bg-color: #333;
+  --container-color: #100332;
+  --displayinput-color: #251440;
+  --text-color: #f3f3f5;
+  --bgbutton-color: #a221d4;
 }
 
 body {
   font-family: sans-serif;
   background-color: var(--bg-color);
+}
+
+p {
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 2em;
+}
+
+.background {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: var(--displayinput-color);
+  border-radius: 5px;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+}
+
+.lengthValue {
+  margin-bottom: 1em;
+}
+
+.submitButtonContainer {
+  text-align: center;
+}
+
+.submitButton {
+  background-color: var(--bgbutton-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 1em 2em;
 }

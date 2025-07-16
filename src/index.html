@@ -3,10 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
+    <form class="form" id="form">
+      <div>
+        <div class="background" id="display">AQUI EL PASSWORD GENERADO</div>
+        <div class="lengthValue">
+          <p>LENGTH:</p>
+        </div>
+        <div class="background">
+          <p id="minValueRange">4</p>
+          <input type="range" name="" class="range" id="" min="4" max="32" />
+          <p id="maxValueRange">32</p>
+        </div>
+        <div class="submitButtonContainer">
+          <input class="submitButton" type="submit" value="GENERATE PASSWORD" />
+        </div>
+      </div>
+    </form>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
