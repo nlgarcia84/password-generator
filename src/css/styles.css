@@ -3,16 +3,34 @@
   --container-color: #100332;
   --displayinput-color: #251440;
   --text-color: #f3f3f5;
+  --display-textcolor: #90899e;
+  --thumbrange-color: #d8d9d8;
+  --trackrange-color: #7023de;
   --bgbutton-color: #a221d4;
 }
 
 body {
   font-family: sans-serif;
   background-color: var(--bg-color);
+  font-family: 'Manrope', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
 }
 
 p {
   margin: 0;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #f50;
 }
 
 .form {
@@ -25,29 +43,62 @@ p {
   padding: 2em;
 }
 
-.background {
+.display {
+  color: var(--display-textcolor);
+}
+
+.displayContainer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--displayinput-color);
+  padding: 1em 2em;
+  border-radius: 5px;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  width: 50%;
+  height: 1.5em;
+  filter: drop-shadow(0 0 0.75rem var(--container-color));
+}
+
+.displayLength {
+  display: flex;
+  margin-bottom: 1.5em;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+.rangeContainer {
   display: flex;
   justify-content: space-between;
-  text-align: center;
   background-color: var(--displayinput-color);
-  border-radius: 5px;
   padding: 1em 2em;
+  border-radius: 5px;
   margin-bottom: 1em;
+  width: 50%;
+  height: 1.5em;
+  margin-bottom: 1.5em;
+  filter: drop-shadow(0 0 0.75rem var(--container-color));
 }
 
 .lengthValue {
   margin-bottom: 1em;
 }
 
-.submitButtonContainer {
-  text-align: center;
+.submitContainer {
+  padding: 1em 2em;
+  margin-bottom: 1em;
 }
 
 .submitButton {
+  letter-spacing: 3px;
   background-color: var(--bgbutton-color);
   color: var(--text-color);
   border: none;
   border-radius: 5px;
-  width: 100%;
-  padding: 1em 2em;
+  padding: 1.5em 3em;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.75rem var(--bgbutton-color));
 }

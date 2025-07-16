@@ -3,25 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <form class="form" id="form">
-      <div>
-        <div class="background" id="display">AQUI EL PASSWORD GENERADO</div>
-        <div class="lengthValue">
-          <p>LENGTH:</p>
-        </div>
-        <div class="background">
-          <p id="minValueRange">4</p>
-          <input type="range" name="" class="range" id="" min="4" max="32" />
-          <p id="maxValueRange">32</p>
-        </div>
-        <div class="submitButtonContainer">
-          <input class="submitButton" type="submit" value="GENERATE PASSWORD" />
-        </div>
+      <!-- Campo para la contraseña generada (id) -->
+      <div class="displayContainer" id="display">
+        <p id="displayText"></p>
+      </div>
+      <div class="displayLength">
+        <p id="displayLength">LENGTH:</p>
+        <!-- Texto para conocer la longitud (id) -->
+        <p id="lengthValue"></p>
+      </div>
+      <!-- Input range para la longitud (id) -->
+      <div class="rangeContainer">
+        <p id="minValueRange">4</p>
+        <input type="range" name="" class="range" id="range" min="4" max="32" />
+        <p id="maxValueRange">32</p>
+      </div>
+      <!-- Botón para generar el password (id) -->
+      <div class="submitContainer">
+        <input class="submitButton" type="submit" value="GENERATE PASSWORD" />
       </div>
     </form>
     <script type="module" src="./js/index.js"></script>
