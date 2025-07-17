@@ -8,7 +8,8 @@ const formElement = document.getElementById('form');
 const allowedCharacters =
   'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890+-.,!"·$%&/()=?{}';
 
-let passwordLength = 16;
+let passwordLength = inputRangeElement.value;
+lengthValueElement.textContent = passwordLength;
 
 const setPasswordLength = () => {
   passwordLength = inputRangeElement.value;
