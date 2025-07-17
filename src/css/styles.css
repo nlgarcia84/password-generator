@@ -11,14 +11,17 @@
   --thumbrange-color: #d8d9d8;
   --trackrange-color: #7023de;
   --bgbutton-color: #a221d4;
+  --bgbody-color: #35024a;
 }
 
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   font-family: sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--bgbody-color);
   font-family: 'Manrope', sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -36,6 +39,8 @@ p {
   background-color: var(--container-color);
   color: var(--text-color);
   padding: 2em;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 0.75rem var(--bg-color));
 }
 
 .display {
