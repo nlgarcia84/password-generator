@@ -45,7 +45,7 @@ p {
 .range {
   height: 3px;
   width: 80%;
-  accent-color: var(--text-color);
+  accent-color: var(--bgbutton-color);
 }
 
 .displayContainer {
