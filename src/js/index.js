@@ -8,20 +8,28 @@ const formElement = document.getElementById('form');
 const allowedCharacters =
   'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890+-.,!"·$%&/()=?{}';
 
+let passwordLength = 16;
+
 const setPasswordLength = () => {
-  lengthValueElement.textContent = inputRangeElement.value;
+  passwordLength = inputRangeElement.value;
+  lengthValueElement.textContent = passwordLength;
+};
+
+const printPassword = (password) => {
+  displayTextElement.textContent = password;
 };
 
 const generatePassword = () => {
-  let password = [];
-  for (let i = 0; i < inputRangeElement.value; i++) {
+  let password = '';
+  for (let i = 0; i < passwordLength; i++) {
     const randomNumber = Math.floor(Math.random() * allowedCharacters.length);
     const randomCharacter = allowedCharacters.charAt(randomNumber);
-    password.push(randomCharacter);
+    password += randomCharacter;
   }
-  const passwordString = password.join('');
-  displayTextElement.textContent = passwordString;
+  printPassword(password);
 };
+
+inputRangeElement.addEventListener('input', setPasswordLength);
 
 formElement.addEventListener('submit', (e) => {
   e.preventDefault();
