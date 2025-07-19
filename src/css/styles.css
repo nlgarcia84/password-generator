@@ -85,6 +85,11 @@ p {
   margin-bottom: 1em;
 }
 
+.displayOptions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .submitContainer {
   display: flex;
   justify-content: center;
@@ -92,7 +97,7 @@ p {
 
 .submitButton {
   letter-spacing: 3px;
-  background-color: var(--bgbutton-color);
+  background-color: var(--display-textcolor);
   color: var(--text-color);
   border: none;
   border-radius: 5px;

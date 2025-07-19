@@ -36,10 +36,51 @@
         <p id="maxValueRange">32</p>
       </div>
       <!-- New Inputs -->
-
+      <div class="displayContainer displayOptions" id="display">
+        <label for="check" class="form__label">Includes Uppercase</label>
+        <input
+          type="checkbox"
+          id="checkUpperCase"
+          class="form__input"
+          name="check"
+        />
+      </div>
+      <div class="displayContainer displayOptions" id="display">
+        <label for="check" class="form__label">Includes Lowecase</label>
+        <input
+          type="checkbox"
+          id="checkLowerCase"
+          class="form__input"
+          name="check"
+        />
+      </div>
+      <div class="displayContainer displayOptions" id="display">
+        <label for="check" class="form__label">Includes Numbers</label>
+        <input
+          type="checkbox"
+          id="checkNumbers"
+          class="form__input"
+          name="check"
+        />
+      </div>
+      <div class="displayContainer displayOptions" id="display">
+        <label for="check" class="form__label">Includes Symbols</label>
+        <input
+          type="checkbox"
+          id="checkSymbols"
+          class="form__input"
+          name="check"
+        />
+      </div>
       <!-- Botón para generar el password (id) -->
       <div class="submitContainer">
-        <input class="submitButton" type="submit" value="GENERATE PASSWORD" />
+        <input
+          id="submitButton"
+          class="submitButton"
+          type="submit"
+          value="GENERATE PASSWORD"
+          disabled
+        />
       </div>
     </form>
     <script type="module" src="./js/index.js"></script>
