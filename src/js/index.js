@@ -29,7 +29,18 @@ const setPasswordLength = () => {
 
 const generatePassword = () => {
   password = '';
-  if (checkUpperCaseElement.checked && checkLowerCaseElement.checked) {
+  if (
+    checkUpperCaseElement.checked &&
+    checkLowerCaseElement.checked &&
+    checkNumbersElement.checked &&
+    checkSymbolsElement.checked
+  ) {
+    for (let i = 0; i < passwordLength; i++) {
+      const randomNumber = Math.floor(Math.random() * allowedCharacters.length);
+      const randomCharacter = allowedCharacters.charAt(randomNumber);
+      password += randomCharacter;
+    }
+  } else if (checkUpperCaseElement.checked && checkLowerCaseElement.checked) {
     for (let i = 0; i < passwordLength; i++) {
       const randomNumber = Math.floor(
         Math.random() * allowedLettersUpperLower.length
@@ -57,18 +68,6 @@ const generatePassword = () => {
       const randomCharacter = allowedSymbols.charAt(randomNumber);
       password += randomCharacter;
     }
-  } else if (checkSymbolsElement.checked) {
-    for (let i = 0; i < passwordLength; i++) {
-      const randomNumber = Math.floor(Math.random() * allowedSymbols.length);
-      const randomCharacter = allowedSymbols.charAt(randomNumber);
-      password += randomCharacter;
-    }
-  } else {
-    for (let i = 0; i < passwordLength; i++) {
-      const randomNumber = Math.floor(Math.random() * allowedCharacters.length);
-      const randomCharacter = allowedCharacters.charAt(randomNumber);
-      password += randomCharacter;
-    }
   }
   return password;
 };
@@ -77,17 +76,11 @@ const printPassword = () => {
   const password = generatePassword();
   if (checkUpperCaseElement.checked) {
     displayTextElement.textContent = password.toUpperCase();
-  }
-  if (checkLowerCaseElement.checked) {
+  } else if (checkLowerCaseElement.checked) {
     displayTextElement.textContent = password.toLowerCase();
-  }
-  if (checkUpperCaseElement.checked && checkLowerCaseElement.checked) {
+  } else if (checkNumbersElement.checked) {
     displayTextElement.textContent = password;
-  }
-  if (checkNumbersElement.checked) {
-    displayTextElement.textContent = password;
-  }
-  if (checkSymbolsElement.checked) {
+  } else if (checkSymbolsElement.checked) {
     displayTextElement.textContent = password;
   }
 };
