@@ -12,6 +12,9 @@ const checkSymbolsElement = document.getElementById('checkSymbols');
 
 const allowedCharacters =
   'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890+-.,!"·$%&/()=?{}';
+const allowedLettersUpperLower =
+  'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+const allowedLowerLetters = 'abcdefghijklmnñopqrstuvwxyz';
 const allowedNumbers = '1234567890';
 const allowedSymbols = '+-.,!"·$%&/()=?{}';
 let password = '';
@@ -26,24 +29,44 @@ const setPasswordLength = () => {
 
 const generatePassword = () => {
   password = '';
-  if (checkUpperCaseElement.checked || checkLowerCaseElement.checked) {
+  if (checkUpperCaseElement.checked && checkLowerCaseElement.checked) {
     for (let i = 0; i < passwordLength; i++) {
-      const randomNumber = Math.floor(Math.random() * allowedCharacters.length);
-      const randomCharacter = allowedCharacters.charAt(randomNumber);
+      const randomNumber = Math.floor(
+        Math.random() * allowedLettersUpperLower.length
+      );
+      const randomCharacter = allowedLettersUpperLower.charAt(randomNumber);
       password += randomCharacter;
     }
-  }
-  if (checkNumbersElement.checked) {
+  } else if (checkUpperCaseElement.checked || checkLowerCaseElement.checked) {
+    for (let i = 0; i < passwordLength; i++) {
+      const randomNumber = Math.floor(
+        Math.random() * allowedLowerLetters.length
+      );
+      const randomCharacter = allowedLowerLetters.charAt(randomNumber);
+      password += randomCharacter;
+    }
+  } else if (checkNumbersElement.checked) {
     for (let i = 0; i < passwordLength; i++) {
       const randomNumber = Math.floor(Math.random() * allowedNumbers.length);
       const randomCharacter = allowedNumbers.charAt(randomNumber);
       password += randomCharacter;
     }
-  }
-  if (checkSymbolsElement.checked) {
+  } else if (checkSymbolsElement.checked) {
     for (let i = 0; i < passwordLength; i++) {
       const randomNumber = Math.floor(Math.random() * allowedSymbols.length);
       const randomCharacter = allowedSymbols.charAt(randomNumber);
+      password += randomCharacter;
+    }
+  } else if (checkSymbolsElement.checked) {
+    for (let i = 0; i < passwordLength; i++) {
+      const randomNumber = Math.floor(Math.random() * allowedSymbols.length);
+      const randomCharacter = allowedSymbols.charAt(randomNumber);
+      password += randomCharacter;
+    }
+  } else {
+    for (let i = 0; i < passwordLength; i++) {
+      const randomNumber = Math.floor(Math.random() * allowedCharacters.length);
+      const randomCharacter = allowedCharacters.charAt(randomNumber);
       password += randomCharacter;
     }
   }
